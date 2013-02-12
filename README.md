@@ -32,7 +32,7 @@ control over them.  By using this DIY method of backup, you get complete control
 client program constantly running on your computer.  You can even do things like encrypt the volume you're backing up to.
 
 The only service you're paying for is Amazon EC2 and EBS, which is pretty cheap, and not likely to disappear any time soon. For example,
-my monthly EC2 costs for perfoming a weekly backup are less than a dollar, and EBS costs at this time are as cheap as $0.10/GB/mo.
+my monthly EC2 costs for performing a weekly backup are less than a dollar, and EBS costs at this time are as cheap as $0.10/GB/mo.
 
 These scripts are provided to give you a simple way to backup your files via rsync to Amazon's infrastructure, and can be easily
 adapted to your needs.
