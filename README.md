@@ -1,4 +1,4 @@
-Copyright (c) 2012 [Nic Jansma](http://nicj.net)
+Copyright (c) 2014 [Nic Jansma](http://nicj.net)
 
 This script allows you to use Amazon Web Services to backup your files to your own personal "cloud".
 
@@ -31,8 +31,11 @@ for the duration of the rsync.  Your backups are stored on EBS volumes in Amazon
 control over them.  By using this DIY method of backup, you get complete control of your backup experience.  No upload rate-limiting, no
 client program constantly running on your computer.  You can even do things like encrypt the volume you're backing up to.
 
+Starting 2014, Amazon has an option to [automatically encrypt EBS volumes](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html). To use this,
+you need to use at least a m3.medium instance (t1.micro does not have the Intel AES-NI instruction set).
+
 The only service you're paying for is Amazon EC2 and EBS, which is pretty cheap, and not likely to disappear any time soon. For example,
-my monthly EC2 costs for performing a weekly backup are less than a dollar, and EBS costs at this time are as cheap as $0.10/GB/mo.
+my monthly EC2 costs for performing a weekly backup are less than a dollar, and EBS costs at this time are as cheap as $0.05/GB/mo.
 
 These scripts are provided to give you a simple way to backup your files via rsync to Amazon's infrastructure, and can be easily
 adapted to your needs.
@@ -167,4 +170,5 @@ Command Line Options
 
 Version History
 ---------------
+v1.0.1 - 2014-06-17: Update with notes about automatic EBS encryption
 v1.0 - 2012-02-20: Initial release

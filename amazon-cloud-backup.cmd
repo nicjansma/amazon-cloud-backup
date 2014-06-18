@@ -53,10 +53,12 @@ set ec2CertificateFile=cert-YOURCERTIFICATE.pem
 set ec2CertificatePath=!thisDir!\!ec2CertificateFile!
 
 REM The EC2 AMI that you want to use
-set ec2Ami=ami-38fe7308
+set ec2Ami=ami-383a5008
 
 REM The EC2 type of instance you want to use
-set ec2InstanceType=t1.micro
+REM t1.micro will work for non-EBS encrypted volumes.  m3.medium is minimum for mounting encrypted EBS volumes.
+REM set ec2InstanceType=t1.micro
+set ec2InstanceType=m3.medium
 
 REM A tag to help identify the EC2 instance when it's running
 set ec2InstanceTag=amazon-cloud-backup
